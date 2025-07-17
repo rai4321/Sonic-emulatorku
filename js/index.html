@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Play Sonic SEGA in Browser</title>
+  <style>
+    body { margin:0; background:#000; color:#fff; text-align:center; font-family:sans-serif; }
+    #screen { width:100%; max-width:640px; height:auto; margin:0 auto; display:block; background:#000; }
+    .btn {
+      position:absolute; background:rgba(255,255,255,0.25); border-radius:50%;
+      width:60px; height:60px; display:flex; justify-content:center; align-items:center;
+      font-size:24px; color:#fff; user-select:none;
+    }
+    #left { left:20px; bottom:90px; }
+    #right { left:90px; bottom:90px; }
+    #up { left:55px; bottom:160px; }
+    #btnA { right:90px; bottom:140px; }
+    #btnB { right:20px; bottom:200px; }
+  </style>
+</head>
+<body>
+  <h1>Play Sonic the Hedgehog</h1>
+  <canvas id="screen"></canvas>
+  <div id="left" class="btn">◀</div>
+  <div id="right" class="btn">▶</div>
+  <div id="up" class="btn">▲</div>
+  <div id="btnA" class="btn">A</div>
+  <div id="btnB" class="btn">B</div>
+
+  <script src="js/emulator.js"></script>
+  <script src="js/touch-controls.js"></script>
+  <script>
+    Sega.init({ canvasId:'screen', romUrl:'rom/sonic.bin' });
+    TouchControls.bind({
+      left:'#left', right:'#right', up:'#up', btnA:'#btnA', btnB:'#btnB'
+    });
+  </script>
+</body>
+</html>
