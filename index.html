@@ -28,8 +28,11 @@
   <div id="btnB" class="btn">B</div>
 
   <script src="js/emulator.js"></script>
-  <script src="js/touch-controls.js"></script>
-  <script>
+<script src="js/touch-controls.js"></script>
+<script>
+  startEmulator('js/rom/namafile.md'); // Ganti dengan nama file ROM kamu, misal: sonic.md
+</script>
+
     Sega.init({ canvasId:'screen', romUrl:'rom/sonic.bin' });
     TouchControls.bind({
       left:'#left', right:'#right', up:'#up', btnA:'#btnA', btnB:'#btnB'
